@@ -63,8 +63,8 @@ bool BME_280_Simulator::process_cycle(bool SDI, bool CSB)
   else if (state == STATE_ADDRESS)
   {
     memory_ptr += SDI << address_bit;
-    address_bit--;
-    if (address_bit == 0)
+    if (address_bit > 0) address_bit--;
+    else if (address_bit == 0)
     {
       if (rw && is_readable(memory_ptr))
       {
