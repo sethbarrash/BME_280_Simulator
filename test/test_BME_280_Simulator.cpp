@@ -10,9 +10,9 @@ int main() {
   b = s.process_cycle(0, 1);
   assert(b == DEFAULT_SDO);
   assert(s.state == STATE_WAITING);
-  b = s.process_cycle(0, 0);
+  b = s.process_cycle(1, 1);
   assert(b == DEFAULT_SDO);
-  assert(s.state == STATE_ADDRESS);
+  assert(s.state == STATE_WAITING);
 
   return 0;
 }

@@ -1,11 +1,14 @@
 #include <cstdint>
 #include <map>
 
+#ifndef BME_280_SIMULATOR_H
+#define BME_280_SIMULATOR_H
+
 using namespace std;
 
 typedef map<uint8_t, uint8_t> memory_map;
 
-bool DEFAULT_SDO = 1;
+static bool DEFAULT_SDO = 1;
 
 enum State {
   STATE_WAITING,
@@ -36,3 +39,5 @@ class BME_280_Simulator {
     bool is_burst_readable(uint8_t address);
     bool process_cycle(bool SDI, bool CSB);
 };
+
+#endif
