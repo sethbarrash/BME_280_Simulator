@@ -99,7 +99,7 @@ void test_read_chip_id()
   assert(b == 0);
 
   b = s.process_cycle(0, 0);
-  assert(s.state == STATE_WAITING);
+  assert(s.state == STATE_INSTRUCTION);
   assert(b == 0);
 }
 
@@ -194,7 +194,7 @@ void test_write_reset()
 
   assert(s.bit_mask == 1);
   b = s.process_cycle(0, 0);
-  assert(s.state == STATE_WAITING);
+  assert(s.state == STATE_INSTRUCTION);
   assert(s.memory[0xE0] = 0xB6);
   assert(b == DEFAULT_SDO);
 }
@@ -202,6 +202,6 @@ void test_write_reset()
 int main() {
   test_unselected();
   test_read_chip_id();
-  test_write();
+  test_write_reset();
   return 0;
 }
