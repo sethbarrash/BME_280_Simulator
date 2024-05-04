@@ -83,7 +83,7 @@ bool BME_280_Simulator::process_cycle(bool SDI, bool CSB)
   {
     if (SDI) memory[memory_ptr] |= bit_mask;
     bit_mask = bit_mask >> 1;
-    if (bit_mask == 0) state = STATE_WAITING;
+    if (bit_mask == 0) state = STATE_INSTRUCTION;
   }
   else if (state == STATE_TRANSMITTING)
   {
@@ -97,7 +97,7 @@ bool BME_280_Simulator::process_cycle(bool SDI, bool CSB)
         tx_buffer = memory[memory_ptr];
         bit_mask = 0x80;
       }
-      else state = STATE_WAITING;
+      else state = STATE_INSTRUCTION;
     }
   }
   return SDO;
