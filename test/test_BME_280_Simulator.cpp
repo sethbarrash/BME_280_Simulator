@@ -109,8 +109,6 @@ int main() {
 
   test_read_chip_id();
 
-  // Test read invalid address
-
   // Test interrupted read
 
   // Test burst read
