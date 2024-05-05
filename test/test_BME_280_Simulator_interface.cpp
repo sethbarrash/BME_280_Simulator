@@ -40,3 +40,7 @@ void test_read_chip_id()
     assert(sdo[i] == expected_sdo[i]);
   }
 }
+
+int main() {
+  test_read_chip_id();
+}
