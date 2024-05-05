@@ -70,34 +70,42 @@ void test_read_chip_id()
   assert(s.memory_ptr == 0xD0);
 
   // Read out chip ID: 0x60
+  assert(s.bit_mask == 0x80);
   b = s.process_cycle(0, 0);
   assert(s.state == STATE_TRANSMITTING);
   assert(b == 0);
 
+  assert(s.bit_mask == 0x40);
   b = s.process_cycle(0, 0);
   assert(s.state == STATE_TRANSMITTING);
   assert(b == 1);
 
+  assert(s.bit_mask == 0x20);
   b = s.process_cycle(0, 0);
   assert(s.state == STATE_TRANSMITTING);
   assert(b == 1);
 
+  assert(s.bit_mask == 0x10);
   b = s.process_cycle(0, 0);
   assert(s.state == STATE_TRANSMITTING);
   assert(b == 0);
 
+  assert(s.bit_mask == 8);
   b = s.process_cycle(0, 0);
   assert(s.state == STATE_TRANSMITTING);
   assert(b == 0);
 
+  assert(s.bit_mask == 4);
   b = s.process_cycle(0, 0);
   assert(s.state == STATE_TRANSMITTING);
   assert(b == 0);
 
+  assert(s.bit_mask == 2);
   b = s.process_cycle(0, 0);
   assert(s.state == STATE_TRANSMITTING);
   assert(b == 0);
 
+  assert(s.bit_mask == 1);
   b = s.process_cycle(0, 0);
   assert(s.state == STATE_INSTRUCTION);
   assert(b == 0);
