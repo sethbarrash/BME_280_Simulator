@@ -1,0 +1,1 @@
+Simulator for the serial peripheral interface (SPI) of the Bosch BME 280.
