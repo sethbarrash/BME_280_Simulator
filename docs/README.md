@@ -1,1 +1,1 @@
-Simulator for the serial peripheral interface (SPI) of the Bosch BME 280.  This can be used to develop software-in-loop (SIL) testing of device drivers.
+Simulator for the serial peripheral interface (SPI) of the Bosch BME 280 humidity/pressure/temperature sensor.  This can be used to develop software-in-loop (SIL) testing of device drivers.
